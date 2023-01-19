@@ -1,0 +1,170 @@
+%\documentclass[a4paper,twocolumn]{article} % Document type
+
+\documentclass[a4paper,12pt,oneside,onecolumn]{article} % Document type
+
+\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+
+\ifx\pdfoutput\undefined
+    %Use old Latex if PDFLatex does not work
+   \usepackage[dvips]{graphicx}% To get graphics working
+   \DeclareGraphicsExtensions{.eps} % Encapsulated PostScript
+ \else
+    %Use PDFLatex
+   \usepackage[pdftex]{graphicx}% To get graphics working
+   \DeclareGraphicsExtensions{.pdf,.jpg,.png,.mps} % Portable Document Format, Joint Photographic Experts Group, Portable Network Graphics, MetaPost
+   \pdfcompresslevel=9
+\fi
+
+\usepackage{amsmath,amssymb}   % Contains mathematical symbols
+\usepackage[ansinew]{inputenc} % Input encoding, identical to Windows 1252
+\usepackage[english]{babel}    % Language
+\usepackage[square,numbers]{natbib}     %Nice numbered citations
+\bibliographystyle{plainnat}            %Sorted bibliography
+
+
+
+\begin{document}               % Begins the document
+
+\title{Homework 1 in EL2450 Hybrid and Embedded Control Systems}
+\author{
+  First Name 1 Last Name 1 \\ Personal Number 1 \\ E-mail 1 
+  \and 
+  First Name 2 Last Name 2 \\ Personal Number 2 \\ E-mail 2
+  }
+%\date{2010-10-10}             % If you want to set the date yourself.
+
+\maketitle                     % Generates the title
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instructions regarding the report
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Instructions and Help}
+
+\textbf{Please remove this part and the sample references before submitting your homework.}
+
+Read the general homework instructions available on the course homepage before starting to write the report.
+
+Here are some additional guidelines how to write a homework report.
+\begin{itemize}
+ \item Try, if possible, to work in teams of two students. The workload of the homework is for two students.
+ \item Fill in name and personal number of all group members.
+ \item Do not copy the task descriptions and use the structure below.
+ \item Do not include code unless the task explicitly states so.
+ \item Motivate your answers well and how you derived them, but be concise.
+ \item The number of points is not necessarily related to much you need to write for task.
+ \item Put references in the end if any.
+ \item Do not include plots from the Simulink scope (color on black background) but export the data to Matlab for plotting.
+ \item There is plenty of material available how to use Latex. Use a search engine of your choice to learn more.
+\end{itemize}
+
+Here are some examples how to use Latex:
+\begin{itemize}
+ \item An equation with a reference \eqref{eq_sample} to it
+ \begin{equation}
+  \dot{x} = \frac{3}{4} x. \label{eq_sample}
+ \end{equation}
+ \item A multi-line equations with a reference to it
+ \begin{align*}
+  \hat{x} &= x - y\\
+  \alpha &= x + \gamma.
+ \end{align*}
+ \item An equation in text: $\Phi = \int\limits_{0}^{h} \mathrm{e}^{A\tau} d \tau$.
+ \item An image
+ \begin{center}
+  \includegraphics[width = 0.8\textwidth]{Phase_portrait_with_regionmark}
+ \end{center}
+ \item A table
+ 
+ \begin{tabular}{@{\vrule height 10.5pt depth4pt  width0pt}|c|c|c|c|}
+    \hline
+     $-2.46$ & $0$ & $-1.73$ & $0$ \\ \hline
+     $0$ & $-2.553$ & $0$ & $2.774$ \\ \hline
+     $0$ & $6.172$ & $-10$ & $7.333$ \\ \hline
+     $1.767$ & $-0.357$ & $5.714$ & $-6.074$ \\ \hline
+  \end{tabular}
+  \item A citation \cite{Oetiker:2008:TheNotSoShortIntroductiontoLaTeXe}
+  \item Display something exactly as it is written: \verb|\frac{1}{2}_|
+  \item Basic formating: \textbf{bold}, \textit{italics}, \texttt{typewriter}
+\end{itemize}
+
+
+
+\section*{Task 1}
+
+Solution to the task
+
+\section*{Task 2}
+
+Solution to the task
+
+\section*{Task 3}
+
+Solution to the task
+
+\section*{Task 4}
+
+Solution to the task
+
+\section*{Task 5}
+
+Solution to the task
+
+\section*{Task 6}
+
+Solution to the task
+
+\section*{Task 7}
+
+Solution to the task
+
+\section*{Task 8}
+
+Solution to the task
+
+\section*{Task 9}
+
+Solution to the task
+
+\section*{Task 10}
+
+Solution to the task
+
+\section*{Task 11}
+
+Solution to the task
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliography{Bibliography_template} %Read the bibliography from a separate file
+
+\begin{thebibliography}{99}
+\bibitem[Khalil(2002)]{Khalil:2002:Nonlinear-systems:vh}
+Hassan~K Khalil.
+\newblock \emph{Nonlinear systems}.
+\newblock Prentice Hall, Upper Saddle river, 3. edition, 2002.
+\newblock ISBN 0-13-067389-7.
+
+\bibitem[Oetiker et~al.(2008)Oetiker, Partl, Hyna, and
+  Schlegl]{Oetiker:2008:TheNotSoShortIntroductiontoLaTeXe}
+Tobias Oetiker, Hubert Partl, Irene Hyna, and Elisabeth Schlegl.
+\newblock \emph{The Not So Short Introduction to \LaTeXe}.
+\newblock Oetiker, OETIKER+PARTNER AG, Aarweg 15, 4600 Olten, Switzerland,
+  2008.
+\newblock http://www.ctan.org/info/lshort/.
+
+\bibitem[Sastry(1999)]{Sastry:1999:Nonlinear-systems:-analysis-stability-and-c%
+ontrol:xr}
+Shankar Sastry.
+\newblock \emph{Nonlinear systems: analysis, stability, and control},
+  volume~10.
+\newblock Springer, New York, N.Y., 1999.
+\newblock ISBN 0-387-98513-1.
+\end{thebibliography}
+
+
+\end{document}      % End of the document
