@@ -18,14 +18,14 @@ yss = 40; % steady state output
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Continuous Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ? how should s be included as variable
 uppertank = k_tank/(1+Tau * tf(1)); % Transfer function for upper tank
 lowertank = gamma_tank / (1 + gamma_tank * Tau * tf(1)); % Transfer function for upper tank
 G = uppertank*lowertank; % Transfer function from input to lower tank level
 
 % Calculate PID parameters
+%[K, Ti, Td, N] = polePlacePID(chi, omega0, zeta,tau,gamma,k);
+%F = K * (1 + 1 / (Ti * tf(1)) + Td * N * tf(1) / (tf(1) + N));
 F = tf(1);
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
