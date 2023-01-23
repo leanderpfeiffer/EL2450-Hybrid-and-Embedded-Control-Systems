@@ -18,8 +18,8 @@ yss = 40; % steady state output
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Continuous Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-uppertank = k_tank/(1+Tau * tf(1)); % Transfer function for upper tank
-lowertank = gamma_tank / (1 + gamma_tank * Tau * tf(1)); % Transfer function for upper tank
+uppertank = tf(k_tank,[Tau, 1]); % Transfer function for upper tank
+lowertank = tf(gamma_tank, [Tau* gamma_tank, 1]); % Transfer function for upper tank
 G = uppertank*lowertank; % Transfer function from input to lower tank level
 
 % Calculate PID parameters
@@ -27,8 +27,8 @@ chi = 0.5;
 zeta = 0.8;
 omega0 = 0.2;
 [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta,Tau,gamma_tank,k_tank);
-F = K * (1 + 1 / (Ti * tf(1)) + Td * N * tf(1) / (tf(1) + N));
-%F = tf(1);
+F = K * (tf(1) + tf(1,[Ti,  0]) + tf([Td * N , 0 ], [1, N]));
+getGainCrossover(F*G,1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
