@@ -26,23 +26,50 @@ G = uppertank*lowertank; % Transfer function from input to lower tank level
 chi = 0.5;
 zeta = 0.8;
 omega0 = 0.2;
+
 [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta,Tau,gamma_tank,k_tank);
 F = K * (tf(1) + tf(1,[Ti,  0]) + tf([Td * N , 0 ], [1, N]));
-getGainCrossover(F*G,1)
+
+w_c = getGainCrossover(F*G,1);
+
+sim('tanks.mdl');
+performanceAnalog = analyseOutput(y);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 1; % Sampling time
+Ts = 0.05; % Sampling time
+
+simOut = sim('tanksZOH.mdl');
+
+performanceZOH = analyseOutput(y);
 
 % Discretize the continous controller, save it in state space form
-% [A_discretized,B_discretized,C_discretized,D_discretized] =
+F_disc = ss(c2d(F,Ts,'ZOH'));
+A_discretized = F_disc.A;
+B_discretized = F_disc.B;
+C_discretized = F_disc.C;
+D_discretized = F_disc.D;
+
+simOut = sim('tanksDisc.mdl');
+
+performanceDisc = analyseOutput(y);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discrete Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+A = [-1/Tau 0 ; 1/Tau -1/(gamma_tank * Tau)];
+B = [k_tank/Tau ; 0];
+C = [0 1];
+D = 0;
+
 % Discretize the continous state space system, save it in state space form
-% [Phi,Gamma,C,D] = 
+Sys_disc = ss(c2d(ss(A,B,C,D), 4, 'ZOH'));
+Phi = Sys_disc.A;
+Gamma = Sys_disc.B;
+C = Sys_disc.C;
+D = Sys_disc.D;
 
 % Observability and reachability
 Wc = 1;
@@ -58,3 +85,12 @@ lr = 1;
 % augmented system matrices
 Aa = 1;
 Ba = 1;
+
+output = [ [" ", "T_r", "M", "T_set"];
+            "Analog", performanceAnalog;
+            "ZOH", performanceZOH;
+            "Discretized", performanceDisc]
+
+
+
+

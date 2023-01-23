@@ -1,4 +1,4 @@
-function [T_r, M, T_set] = analyseOutput(timeSignal)
+function [performance] = analyseOutput(timeSignal)
     inputTime = 25;
     targetValue = 50;
     data = timeSignal.Data;
@@ -17,3 +17,4 @@ function [T_r, M, T_set] = analyseOutput(timeSignal)
         T_set = time(k) - inputTime;
         k = k - 1;
     end
+    performance = [T_r M T_set];
