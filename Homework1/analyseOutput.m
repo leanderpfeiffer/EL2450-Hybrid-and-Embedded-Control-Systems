@@ -10,7 +10,7 @@ function [performance] = analyseOutput(timeSignal)
         i = i + 1;
     end
   
-    M = (max(data)- targetValue)/targetValue;
+    M = (max(data)- targetValue)/10;
 
     k = length(time);
     while abs(data(k) - targetValue) < targetValue * 0.02
