@@ -29,6 +29,11 @@ omega0 = 0.2;
 
 [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta,Tau,gamma_tank,k_tank);
 F = K * (tf(1) + tf(1,[Ti,  0]) + tf([Td * N , 0 ], [1, N]));
+sys = F*G/(1+F*G);
+S1 = stepinfo(sys);
+T_r = S1.RiseTime
+M = S1.Overshoot
+T_set = S1.SettlingTime
 
 w_c = getGainCrossover(F*G,1);
 
@@ -38,7 +43,7 @@ performanceAnalog = analyseOutput(y);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 0.05; % Sampling time
+Ts = 2; % Sampling time
 
 simOut = sim('tanksZOH.mdl');
 

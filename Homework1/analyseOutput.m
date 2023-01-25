@@ -5,8 +5,14 @@ function [performance] = analyseOutput(timeSignal)
     time = timeSignal.Time;
 
     i = 1;
-    while data(i) < 49
-        T_r = time(i) - inputTime;
+    
+    while data(i) <= 41
+        startTime = time(i);
+        i = i + 1;
+    end
+    
+    while data(i) <= 49
+        T_r = time(i) - startTime;
         i = i + 1;
     end
   
