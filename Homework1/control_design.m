@@ -39,30 +39,56 @@ w_c = getGainCrossover(F*G,1);
 
 sim('tanks.mdl');
 analogSignal = y;
-performanceAnalog = analyseOutput(y);
+ performanceAnalog = analyseOutput(y);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 2; % Sampling time
-
-simOut = sim('tanksZOH.mdl');
-zohSignal = y;
-
-performanceZOH = analyseOutput(y);
-
-% Discretize the continous controller, save it in state space form
-F_disc = ss(c2d(F,Ts,'ZOH'));
-A_discretized = F_disc.A;
-B_discretized = F_disc.B;
-C_discretized = F_disc.C;
-D_discretized = F_disc.D;
-
-simOut = sim('tanksDisc.mdl');
-discretizisedSignal = y;
+j=1;
+n=20;
+performanceZOH=zeros(n,3);
+performanceDisc=zeros(n,3);
 
 
-performanceDisc = analyseOutput(y);
+for Ts = linspace(0.1,2,n) % Sampling time
+
+    simOut = sim('tanksZOH.mdl');
+    zohSignal = y;
+    
+    performanceZOH(j,:) = analyseOutput(y);
+    
+    
+    % Discretize the continous controller, save it in state space form
+    F_disc = ss(c2d(F,Ts,'ZOH'));
+    A_discretized = F_disc.A;
+    B_discretized = F_disc.B;
+    C_discretized = F_disc.C;
+    D_discretized = F_disc.D;
+    
+    simOut = sim('tanksDisc.mdl');
+    discretizisedSignal = y;
+    performanceDisc(j,:) = analyseOutput(y);
+    j=j+1;
+    
+end
+figure;
+scatter(performanceZOH(:,1),linspace(0.1,2,n))
+hold on
+scatter(performanceDisc(:,1),linspace(0.1,2,n))
+plot([6 6],[0 2])
+hold off
+figure;
+scatter(performanceZOH(:,2),linspace(0.1,2,n))
+hold on
+scatter(performanceDisc(:,2),linspace(0.1,2,n))
+plot([0.35 0.35],[0 2])
+hold off
+figure;
+scatter(performanceZOH(:,3),linspace(0.1,2,n))
+hold on
+scatter(performanceDisc(:,3),linspace(0.1,2,n))
+plot([30 30],[0 2])
+hold off
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discrete Control design
@@ -97,8 +123,8 @@ Ba = 1;
 
 output = [ [" ", "T_r", "M", "T_set"];
             "Analog", performanceAnalog;
-            "ZOH", performanceZOH;
-            "Discretized", performanceDisc]
+            "ZOH", performanceZOH(n,:);
+            "Discretized", performanceDisc(n,:)]
 
 figure
 hold on
