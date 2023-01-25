@@ -38,6 +38,7 @@ T_set = S1.SettlingTime
 w_c = getGainCrossover(F*G,1);
 
 sim('tanks.mdl');
+analogSignal = y;
 performanceAnalog = analyseOutput(y);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,6 +47,7 @@ performanceAnalog = analyseOutput(y);
 Ts = 2; % Sampling time
 
 simOut = sim('tanksZOH.mdl');
+zohSignal = y;
 
 performanceZOH = analyseOutput(y);
 
@@ -57,6 +59,8 @@ C_discretized = F_disc.C;
 D_discretized = F_disc.D;
 
 simOut = sim('tanksDisc.mdl');
+discretizisedSignal = y;
+
 
 performanceDisc = analyseOutput(y);
 
@@ -96,6 +100,13 @@ output = [ [" ", "T_r", "M", "T_set"];
             "ZOH", performanceZOH;
             "Discretized", performanceDisc]
 
+figure
+hold on
+plot(analogSignal)
 
+plot(zohSignal)
 
+plot(discretizisedSignal)
 
+legend(["Analog","ZOH","Digital"])
+hold off
