@@ -76,18 +76,27 @@ scatter(performanceZOH(:,1),linspace(0.1,2,n))
 hold on
 scatter(performanceDisc(:,1),linspace(0.1,2,n))
 plot([6 6],[0 2])
+xlabel T_r
+ylabel T_s
+legend(["ZOH","Discretized","Upper Bound"])
 hold off
 figure;
 scatter(performanceZOH(:,2),linspace(0.1,2,n))
 hold on
 scatter(performanceDisc(:,2),linspace(0.1,2,n))
 plot([0.35 0.35],[0 2])
+xlabel M
+ylabel T_s
+legend(["ZOH","Discretized","Upper Bound"])
 hold off
 figure;
 scatter(performanceZOH(:,3),linspace(0.1,2,n))
 hold on
 scatter(performanceDisc(:,3),linspace(0.1,2,n))
 plot([30 30],[0 2])
+xlabel T_{set}
+ylabel T_s
+legend(["ZOH","Discretized","Upper Bound"])
 hold off
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,8 +132,8 @@ Ba = 1;
 
 output = [ [" ", "T_r", "M", "T_set"];
             "Analog", performanceAnalog;
-            "ZOH", performanceZOH(n,:);
-            "Discretized", performanceDisc(n,:)]
+            "ZOH", performanceZOH(1,:);
+            "Discretized", performanceDisc(1,:)]
 
 figure
 hold on
@@ -133,6 +142,7 @@ plot(analogSignal)
 plot(zohSignal)
 
 plot(discretizisedSignal)
-
-legend(["Analog","ZOH","Digital"])
+xlabel Time
+ylabel Amplitude
+legend(["Analog","ZOH","Discretized"])
 hold off
