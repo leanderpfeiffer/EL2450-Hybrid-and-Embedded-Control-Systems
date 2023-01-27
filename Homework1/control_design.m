@@ -39,18 +39,18 @@ w_c = getGainCrossover(F*G,1);
 
 sim('tanks.mdl');
 analogSignal = y;
- performanceAnalog = analyseOutput(y);
+performanceAnalog = analyseOutput(y);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 j=1;
-n=20;
+n=1;
 performanceZOH=zeros(n,3);
 performanceDisc=zeros(n,3);
 
 
-for Ts = linspace(0.1,2,n) % Sampling time
+for Ts = linspace(4,4,n) % Sampling time
 
     simOut = sim('tanksZOH.mdl');
     zohSignal = y;
