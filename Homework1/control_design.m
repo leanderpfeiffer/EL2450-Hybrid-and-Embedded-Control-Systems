@@ -45,12 +45,12 @@ performanceAnalog = analyseOutput(y);
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 j=1;
-n=1;
+n=20;
 performanceZOH=zeros(n,3);
 performanceDisc=zeros(n,3);
 
 
-for Ts = linspace(4,4,n) % Sampling time
+for Ts = linspace(0.1,2,n) % Sampling time
 
     simOut = sim('tanksZOH.mdl');
     zohSignal = y;
@@ -120,9 +120,12 @@ Wc = 1;
 Wo = 1;
 
 % State feedback controller gain
-L = 1;
+p=eig(A);
+pdisc = exp(Ts*p);
+L=acker(Phi,Gamma,pdisc)
+
 % observer gain
-K = 1;
+K = (acker(Phi',C',[0 0]))'
 % reference gain
 lr = 1;
 
@@ -132,8 +135,8 @@ Ba = 1;
 
 output = [ [" ", "T_r", "M", "T_set"];
             "Analog", performanceAnalog;
-            "ZOH", performanceZOH(1,:);
-            "Discretized", performanceDisc(1,:)]
+            "ZOH", performanceZOH(n,:);
+            "Discretized", performanceDisc(n,:)]
 
 figure
 hold on
