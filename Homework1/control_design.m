@@ -142,7 +142,7 @@ discretedesignSignal = y;
 j=1;
 m=5;
 %performanceDiscQuant=zeros(m,3);
-discretequantSignal= zeros(55,m); %size needs to be changed when changing time
+discretequantSignal= zeros(55,m); %change with time
 figure;
 for quantint = linspace(0.05,0.25,m)
 set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
