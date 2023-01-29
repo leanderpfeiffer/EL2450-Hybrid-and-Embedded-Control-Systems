@@ -41,9 +41,9 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <cp:category>model</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-25T16:33:01Z</dcterms:created>
-  <cp:lastModifiedBy>pirmi</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-28T17:27:00Z</dcterms:modified>
-  <cp:revision>11.3</cp:revision>
+  <cp:lastModifiedBy>leanderpfeiffer</cp:lastModifiedBy>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T21:37:34Z</dcterms:modified>
+  <cp:revision>11.4</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
 
@@ -65,11 +65,11 @@ __MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesReleaseInfo.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Version information for MathWorks R2022a Release -->
 <MathWorks_version_info>
-  <version>9.12.0.2039608</version>
+  <version>9.12.0.2009381</version>
   <release>R2022a</release>
-  <description>Update 5</description>
-  <date>Aug 12 2022</date>
-  <checksum>1169930455</checksum>
+  <description>Update 4</description>
+  <date>Jul 07 2022</date>
+  <checksum>2447852957</checksum>
 </MathWorks_version_info>
 
 __MWOPC_PART_BEGIN__ /simulink/_rels/blockdiagram.xml.rels
@@ -115,12 +115,12 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
 <ModelInformation Version="1.0">
   <Model>
     <P Name="ModelUUID">413b9e40-96b2-4f19-939b-58a3c6d5ecc4</P>
-    <P Name="LastSavedArchitecture">win64</P>
+    <P Name="LastSavedArchitecture">maci64</P>
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">596571109</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.3&gt;</P>
+      <P Name="RTWModifiedTimeStamp">596932648</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.4&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="LibraryLinkDisplay">none</P>
@@ -164,7 +164,7 @@ __MWOPC_PART_BEGIN__ /simulink/configSet0.xml
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
         <P Name="StartTime">0.0</P>
-        <P Name="StopTime">100</P>
+        <P Name="StopTime">500</P>
         <P Name="AbsTol">auto</P>
         <P Name="AutoScaleAbsTol">on</P>
         <P Name="FixedStep">auto</P>
@@ -917,8 +917,8 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="0f907855-5e49-4943-a963-c658ac8b69ff">
-    <Interface type="Interface" uuid="61d7c305-076f-43d5-8df0-c4be2b7658b3"/>
+  <System type="System" uuid="3282d804-1692-4f7d-984a-9bb5327ce948">
+    <Interface type="Interface" uuid="74163a7c-39d3-4f72-87db-0820f35ef9f1"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
@@ -930,27 +930,27 @@ __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="520dc817-c817-431a-aed3-b67cef43b81f">
     <priorityDirection>HighNumberLast</priorityDirection>
     <editorState type="sltp.mm.core.EditorState" uuid="64e6c17e-0e9d-445d-bed7-34581ff8ff07">
       <isSynchronized>true</isSynchronized>
       <panelState type="sltp.mm.core.EditorPanelState" uuid="73b1a0d2-0e83-4ade-86cf-19c477e9d4b3"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="5df34f0d-ec7c-4518-9363-e87c354f67ec">
-      <context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a"/>
+    <rootTask type="sltp.mm.core.Task" uuid="da8cbc80-ce73-4a40-a912-c0d18cefa253">
+      <context type="sltp.mm.core.Context" uuid="520dc817-c817-431a-aed3-b67cef43b81f"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="108d4f04-a146-4166-83e2-bd4b177d4131">
-        <tasks type="sltp.mm.core.Task" uuid="32b514f1-3e91-44dc-80ea-beb62017991a">
+      <subgraph type="sltp.mm.core.Graph" uuid="0911116c-08ef-461e-b305-2c8abc44782e">
+        <tasks type="sltp.mm.core.Task" uuid="b875a0dd-bb76-406b-a720-05d0a50de965">
           <baseTask>true</baseTask>
-          <context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a"/>
+          <context type="sltp.mm.core.Context" uuid="520dc817-c817-431a-aed3-b67cef43b81f"/>
           <explicit>false</explicit>
           <id>1</id>
           <isTimed>true</isTimed>
           <name>Cont</name>
           <priority>40</priority>
-          <rates type="sltp.mm.core.Rate" uuid="a4244b46-86a6-45a4-be9a-1b3e87e22e27">
+          <rates type="sltp.mm.core.Rate" uuid="aa796df4-f31a-4af6-940c-011098ce8676">
             <annotation>Cont</annotation>
             <color>255</color>
             <hasBlocks>true</hasBlocks>
@@ -960,7 +960,7 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>0</sti>
           </rates>
-          <rates type="sltp.mm.core.Rate" uuid="01f7c870-d2b5-42f1-acb2-e6633a2cd0f5">
+          <rates type="sltp.mm.core.Rate" uuid="fad1bbd5-701f-4b3b-bf21-d925b3c87c3f">
             <annotation>FiM</annotation>
             <color>-2139062017</color>
             <hasBlocks>true</hasBlocks>
@@ -1143,35 +1143,35 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_108.xml
   </Line>
   <Annotation SID="120">
     <P Name="Name">Flow in</P>
-    <P Name="Position">[126, 19, 159, 33]</P>
+    <P Name="Position">[126, 19, 159, 31]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-1</P>
   </Annotation>
   <Annotation SID="119">
     <P Name="Name">Flow out</P>
-    <P Name="Position">[123, 114, 162, 128]</P>
+    <P Name="Position">[123, 114, 162, 126]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-2</P>
   </Annotation>
   <Annotation SID="118">
     <P Name="Name">dV/dt</P>
-    <P Name="Position">[200, 59, 225, 73]</P>
+    <P Name="Position">[200, 59, 225, 71]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-3</P>
   </Annotation>
   <Annotation SID="117">
     <P Name="Name">V</P>
-    <P Name="Position">[303, 59, 311, 73]</P>
+    <P Name="Position">[303, 59, 311, 71]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-4</P>
   </Annotation>
   <Annotation SID="116">
     <P Name="Name">h2</P>
-    <P Name="Position">[391, 59, 404, 73]</P>
+    <P Name="Position">[391, 59, 404, 71]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-5</P>
@@ -1542,35 +1542,35 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_91.xml
   </Line>
   <Annotation SID="107">
     <P Name="Name">h1</P>
-    <P Name="Position">[426, 69, 439, 83]</P>
+    <P Name="Position">[426, 69, 439, 81]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-1</P>
   </Annotation>
   <Annotation SID="106">
     <P Name="Name">V</P>
-    <P Name="Position">[343, 69, 351, 83]</P>
+    <P Name="Position">[343, 69, 351, 81]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-2</P>
   </Annotation>
   <Annotation SID="105">
     <P Name="Name">dV/dt</P>
-    <P Name="Position">[245, 69, 270, 83]</P>
+    <P Name="Position">[245, 69, 270, 81]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-3</P>
   </Annotation>
   <Annotation SID="104">
     <P Name="Name">Flow out</P>
-    <P Name="Position">[178, 119, 217, 133]</P>
+    <P Name="Position">[178, 119, 217, 131]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-4</P>
   </Annotation>
   <Annotation SID="103">
     <P Name="Name">Flow in</P>
-    <P Name="Position">[181, 29, 214, 43]</P>
+    <P Name="Position">[181, 29, 214, 41]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="ForegroundColor">red</P>
     <P Name="ZOrder">-5</P>
@@ -1585,7 +1585,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <P Name="Open">on</P>
   <P Name="SetExecutionDomain">off</P>
   <P Name="ExecutionDomainType">Deduce</P>
-  <P Name="ZoomFactor">248</P>
+  <P Name="ZoomFactor">246</P>
   <P Name="ReportName">simulink-default.rpt</P>
   <P Name="SIDHighWatermark">137</P>
   <P Name="SimulinkSubDomain">Simulink</P>
@@ -1766,10 +1766,10 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="IsTabbed" Class="logical">1</P>
           <P Name="ViewObjType" Class="char">SimulinkTopLevel</P>
           <P Name="LoadSaveID" Class="char">0</P>
-          <P Name="Extents" Class="double">[2442.0, 1114.0]</P>
-          <P Name="ZoomFactor" Class="double">2.4786845310596837</P>
-          <P Name="Offset" Class="double">[1006.9376983272406, 85.9408292578103]</P>
-          <P Name="SceneRectInView" Class="double">[1006.9376983272406, 85.9408292578103, 656.8, 299.621294021294]</P>
+          <P Name="Extents" Class="double">[1642.0, 737.0]</P>
+          <P Name="ZoomFactor" Class="double">2.4597717675821187</P>
+          <P Name="Offset" Class="double">[1001.5668945396119, 85.9408292578103]</P>
+          <P Name="SceneRectInView" Class="double">[1001.5668945396119, 85.9408292578103, 667.54160757525744, 299.621294021294]</P>
         </Object>
         <Object ObjectID="6">
           <P Name="IsActive" Class="logical">0</P>
@@ -1801,8 +1801,8 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="UserData" Class="char"/>
           <P Name="Floating" Class="logical">0</P>
           <P Name="DockPosition" Class="char">Right</P>
-          <P Name="Width" Class="int32">426</P>
-          <P Name="Height" Class="int32">320</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
         <Object ObjectID="9">
@@ -1814,12 +1814,12 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
 </P>
           <P Name="Floating" Class="logical">0</P>
           <P Name="DockPosition" Class="char">Left</P>
-          <P Name="Width" Class="int32">426</P>
-          <P Name="Height" Class="int32">320</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
       </Array>
-      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAxwD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAoAA////AAAAAwAABpAAAADQ/AEAAAAB+/////8AAAAAAP////8AAAIDAP///wAACcIAAASoAAAAAQAAAAIAAAABAAAAAvwAAAABAAAAAgAAAAA=</P>
+      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABkAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAiAD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAAAwAABpAAAADQ/AEAAAAB+/////8AAAAAAP////8AAAFZAP///wAABpAAAAMeAAAAAQAAAAIAAAABAAAAAvwAAAABAAAAAgAAAAA=</P>
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">078924cd-1b8c-4d7d-8930-d8df4c9d32f3</P>
     </Object>

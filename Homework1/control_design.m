@@ -44,72 +44,29 @@ performanceAnalog = analyseOutput(y);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-j=1;
-n=20;
-performanceZOH=zeros(n,3);
-performanceDisc=zeros(n,3);
-
-
-for Ts = linspace(0.1,2,n) % Sampling time
-
-    simOut = sim('tanksZOH.mdl');
-    zohSignal = y;
-    
-    performanceZOH(j,:) = analyseOutput(y);
-    
-    
+Ts = 4
     % Discretize the continous controller, save it in state space form
-    F_disc = ss(c2d(F,Ts,'ZOH'));
-    A_discretized = F_disc.A;
-    B_discretized = F_disc.B;
-    C_discretized = F_disc.C;
-    D_discretized = F_disc.D;
+F_disc = ss(c2d(F,Ts,'ZOH'));
+A_discretized = F_disc.A;
+B_discretized = F_disc.B;
+C_discretized = F_disc.C;
+D_discretized = F_disc.D;
     
-    simOut = sim('tanksDisc.mdl');
-    discretizisedSignal = y;
-    performanceDisc(j,:) = analyseOutput(y);
-    j=j+1;
-    
-end
-figure;
-scatter(performanceZOH(:,1),linspace(0.1,2,n))
-hold on
-scatter(performanceDisc(:,1),linspace(0.1,2,n))
-plot([6 6],[0 2])
-xlabel T_r
-ylabel T_s
-legend(["ZOH","Discretized","Upper Bound"])
-hold off
-figure;
-scatter(performanceZOH(:,2),linspace(0.1,2,n))
-hold on
-scatter(performanceDisc(:,2),linspace(0.1,2,n))
-plot([0.35 0.35],[0 2])
-xlabel M
-ylabel T_s
-legend(["ZOH","Discretized","Upper Bound"])
-hold off
-figure;
-scatter(performanceZOH(:,3),linspace(0.1,2,n))
-hold on
-scatter(performanceDisc(:,3),linspace(0.1,2,n))
-plot([30 30],[0 2])
-xlabel T_{set}
-ylabel T_s
-legend(["ZOH","Discretized","Upper Bound"])
-hold off
+simOut = sim('tanksDisc.mdl');
+discretizisedSignal = y;
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discrete Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+Ts = 4
 A = [-1/Tau 0 ; 1/Tau -1/(gamma_tank * Tau)];
 B = [k_tank/Tau ; 0];
 C = [0 1];
 D = 0;
 
 % Discretize the continous state space system, save it in state space form
-Sys_disc = ss(c2d(ss(A,B,C,D), 4, 'ZOH'));
+Sys_disc = ss(c2d(ss(A,B,C,D), Ts, 'ZOH'));
 Phi = Sys_disc.A;
 Gamma = Sys_disc.B;
 C = Sys_disc.C;
@@ -123,6 +80,7 @@ Wo = 1;
 p=eig(A);
 pdisc = exp(Ts*p);
 L=acker(Phi,Gamma,pdisc);
+%L=acker(Phi,Gamma,[0.5 0.5]);
 
 % observer gain
 K = (acker(Phi',C',[0 0]))'
@@ -132,6 +90,8 @@ lr = 1/(C*inv(eye(2)-Phi+Gamma*L)*Gamma);
 % augmented system matrices
 Aa = [Phi -Gamma*L; K*C Phi-Gamma*L-K*C];
 Ba = [Gamma*lr; Gamma*lr];
+Ca = [0 1 0 0];
+G = @(s) Ca'*(s*eye(4)-Aa)\Ba;
 sysaug= ss(Aa,Ba,[0 1 0 0],D);
 sysmin = minreal(sysaug);
 paug=pole(sysmin);
@@ -139,16 +99,25 @@ paug=pole(sysmin);
 simOut=sim('tanksDiscDesign.mdl');
 discretedesignSignal = y;
 
+figure
+hold on
+plot(analogSignal)
+plot(discretizisedSignal)
+plot(discretedesignSignal)
+legend("Analog PID controller", "discretizised controller", "discrete designed controller")
+hold off
+%%
+
 j=1;
 m=5;
 %performanceDiscQuant=zeros(m,3);
-discretequantSignal= zeros(55,m); %size needs to be changed when changing time
+%discretequantSignal= zeros(55,m); %size needs to be changed when changing time
 figure;
 for quantint = linspace(0.05,0.25,m)
 set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
 set_param('tanksDiscQuant/Quantizer1','QuantizationInterval',num2str(quantint))
 simOut=sim('tanksDiscQuant.mdl');
- discretequantSignal(:,j) = y.Data;
+ %discretequantSignal(:,j) = y.Data;
  
  plot(y)
  hold on
