@@ -121,6 +121,7 @@ Wo = 1;
 
 % State feedback controller gain
 p=eig(A);
+Ts=2;
 pdisc = exp(Ts*p);
 L=acker(Phi,Gamma,pdisc);
 
@@ -142,16 +143,18 @@ discretedesignSignal = y;
 j=1;
 m=5;
 %performanceDiscQuant=zeros(m,3);
-discretequantSignal= zeros(55,m); %change with time
+%discretequantSignal= zeros(130,m); %change with time
 figure;
+hold on
 for quantint = linspace(0.05,0.25,m)
 set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
 set_param('tanksDiscQuant/Quantizer1','QuantizationInterval',num2str(quantint))
 simOut=sim('tanksDiscQuant.mdl');
- discretequantSignal(:,j) = y.Data;
+discretequantSignal = y;
+ %discretequantSignal(:,j) = y.Data;
  
- plot(y)
- hold on
+ plot(discretequantSignal)
+ 
  %performanceDiscQuant(j,:) = analyseOutput(y);
  j=j+1;
 end
