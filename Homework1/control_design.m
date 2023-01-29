@@ -122,21 +122,48 @@ Wo = 1;
 % State feedback controller gain
 p=eig(A);
 pdisc = exp(Ts*p);
-L=acker(Phi,Gamma,pdisc)
+L=acker(Phi,Gamma,pdisc);
 
 % observer gain
 K = (acker(Phi',C',[0 0]))'
 % reference gain
-lr = 1;
+lr = 1/(C*inv(eye(2)-Phi+Gamma*L)*Gamma);
 
 % augmented system matrices
-Aa = 1;
-Ba = 1;
+Aa = [Phi -Gamma*L; K*C Phi-Gamma*L-K*C];
+Ba = [Gamma*lr; Gamma*lr];
+sysaug= ss(Aa,Ba,[0 1 0 0],D);
+sysmin = minreal(sysaug);
+paug=pole(sysmin);
 
+simOut=sim('tanksDiscDesign.mdl');
+discretedesignSignal = y;
+
+j=1;
+m=5;
+%performanceDiscQuant=zeros(m,3);
+discretequantSignal= zeros(55,m); %size needs to be changed when changing time
+figure;
+for quantint = linspace(0.05,0.25,m)
+set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
+set_param('tanksDiscQuant/Quantizer1','QuantizationInterval',num2str(quantint))
+simOut=sim('tanksDiscQuant.mdl');
+ discretequantSignal(:,j) = y.Data;
+ 
+ plot(y)
+ hold on
+ %performanceDiscQuant(j,:) = analyseOutput(y);
+ j=j+1;
+end
+plot(discretedesignSignal)
+xlabel Time
+ylabel Amplitude
+legend(["Qlevel=0.05","Qlevel=0.1","Qlevel=0.15","Qlevel=0.2","Qlevel=0.25","without quantization"])
+hold off
 output = [ [" ", "T_r", "M", "T_set"];
             "Analog", performanceAnalog;
-            "ZOH", performanceZOH(n,:);
-            "Discretized", performanceDisc(n,:)]
+            "ZOH", performanceZOH(1,:);
+            "Discretized", performanceDisc(1,:)]
 
 figure
 hold on
@@ -145,7 +172,9 @@ plot(analogSignal)
 plot(zohSignal)
 
 plot(discretizisedSignal)
+
+plot(discretedesignSignal)
 xlabel Time
 ylabel Amplitude
-legend(["Analog","ZOH","Discretized"])
+legend(["Analog","ZOH","Discretized","Discrete Design"])
 hold off
