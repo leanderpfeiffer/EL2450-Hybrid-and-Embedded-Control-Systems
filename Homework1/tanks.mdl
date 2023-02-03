@@ -42,8 +42,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <cp:category>model</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-25T16:33:01Z</dcterms:created>
   <cp:lastModifiedBy>pirmi</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-28T17:27:00Z</dcterms:modified>
-  <cp:revision>11.3</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T22:27:38Z</dcterms:modified>
+  <cp:revision>11.4</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
 
@@ -119,8 +119,8 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">596571109</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.3&gt;</P>
+      <P Name="RTWModifiedTimeStamp">596926053</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.4&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="LibraryLinkDisplay">none</P>
@@ -164,7 +164,7 @@ __MWOPC_PART_BEGIN__ /simulink/configSet0.xml
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
         <P Name="StartTime">0.0</P>
-        <P Name="StopTime">100</P>
+        <P Name="StopTime">500</P>
         <P Name="AbsTol">auto</P>
         <P Name="AutoScaleAbsTol">on</P>
         <P Name="FixedStep">auto</P>
@@ -917,8 +917,8 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="0f907855-5e49-4943-a963-c658ac8b69ff">
-    <Interface type="Interface" uuid="61d7c305-076f-43d5-8df0-c4be2b7658b3"/>
+  <System type="System" uuid="431dbdc6-96bb-4ced-a110-09a796524926">
+    <Interface type="Interface" uuid="d3e93eda-5835-4940-b640-4036b3189f9a"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
@@ -930,27 +930,27 @@ __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="b3ff0629-fb1e-4f79-8845-a61acc4fd33b">
     <priorityDirection>HighNumberLast</priorityDirection>
     <editorState type="sltp.mm.core.EditorState" uuid="64e6c17e-0e9d-445d-bed7-34581ff8ff07">
       <isSynchronized>true</isSynchronized>
       <panelState type="sltp.mm.core.EditorPanelState" uuid="73b1a0d2-0e83-4ade-86cf-19c477e9d4b3"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="5df34f0d-ec7c-4518-9363-e87c354f67ec">
-      <context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a"/>
+    <rootTask type="sltp.mm.core.Task" uuid="9b9d8a2c-568c-469e-9aaa-4fd89c6452e3">
+      <context type="sltp.mm.core.Context" uuid="b3ff0629-fb1e-4f79-8845-a61acc4fd33b"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="108d4f04-a146-4166-83e2-bd4b177d4131">
-        <tasks type="sltp.mm.core.Task" uuid="32b514f1-3e91-44dc-80ea-beb62017991a">
+      <subgraph type="sltp.mm.core.Graph" uuid="43c790a2-f2e8-48a2-8603-416a2bce0114">
+        <tasks type="sltp.mm.core.Task" uuid="b304aa6d-ca2c-438f-b3c7-04b84541bc52">
           <baseTask>true</baseTask>
-          <context type="sltp.mm.core.Context" uuid="c8ec5363-4e0e-4df8-a265-be949150ae8a"/>
+          <context type="sltp.mm.core.Context" uuid="b3ff0629-fb1e-4f79-8845-a61acc4fd33b"/>
           <explicit>false</explicit>
           <id>1</id>
           <isTimed>true</isTimed>
           <name>Cont</name>
           <priority>40</priority>
-          <rates type="sltp.mm.core.Rate" uuid="a4244b46-86a6-45a4-be9a-1b3e87e22e27">
+          <rates type="sltp.mm.core.Rate" uuid="93609a97-66c1-47b0-8eac-98ff9698d9d4">
             <annotation>Cont</annotation>
             <color>255</color>
             <hasBlocks>true</hasBlocks>
@@ -960,7 +960,7 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>0</sti>
           </rates>
-          <rates type="sltp.mm.core.Rate" uuid="01f7c870-d2b5-42f1-acb2-e6633a2cd0f5">
+          <rates type="sltp.mm.core.Rate" uuid="297f044d-0fa0-4725-af3b-eaefe002aadc">
             <annotation>FiM</annotation>
             <color>-2139062017</color>
             <hasBlocks>true</hasBlocks>

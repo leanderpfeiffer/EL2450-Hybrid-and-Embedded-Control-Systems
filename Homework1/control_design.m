@@ -142,9 +142,13 @@ discretedesignSignal = y;
 j=1;
 m=5;
 %performanceDiscQuant=zeros(m,3);
+<<<<<<< Updated upstream
 discretequantSignal= zeros(55,m); %change with time
+=======
+discretequantSignal= zeros(255,m); %size needs to be changed when changing time
+>>>>>>> Stashed changes
 figure;
-for quantint = linspace(0.05,0.25,m)
+for quantint = linspace(0.05,100,m)
 set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
 set_param('tanksDiscQuant/Quantizer1','QuantizationInterval',num2str(quantint))
 simOut=sim('tanksDiscQuant.mdl');

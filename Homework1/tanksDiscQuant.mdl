@@ -42,8 +42,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <cp:category>model</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-27T11:35:16Z</dcterms:created>
   <cp:lastModifiedBy>pirmi</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T14:12:31Z</dcterms:modified>
-  <cp:revision>11.7</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T22:27:30Z</dcterms:modified>
+  <cp:revision>11.8</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
 
@@ -119,8 +119,8 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">596905862</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.7&gt;</P>
+      <P Name="RTWModifiedTimeStamp">596934491</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.8&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="LibraryLinkDisplay">none</P>
@@ -917,8 +917,8 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="8cf8b416-d86d-4cba-b37f-07bc45c4506c">
-    <Interface type="Interface" uuid="ba706c97-15a5-4699-a67b-fb8dba0e9d46"/>
+  <System type="System" uuid="e192dcca-7dd5-468a-9591-c90b16833a15">
+    <Interface type="Interface" uuid="6d728e56-e6e5-4b4e-ad1b-9bfdb7e21a43"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
@@ -930,27 +930,27 @@ __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="72993f32-3b0b-4a3e-bcac-9e26859db0b3">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="2e8d0b33-207d-4117-a257-f7d55e46ac99">
     <priorityDirection>HighNumberLast</priorityDirection>
     <editorState type="sltp.mm.core.EditorState" uuid="64e6c17e-0e9d-445d-bed7-34581ff8ff07">
       <isSynchronized>true</isSynchronized>
       <panelState type="sltp.mm.core.EditorPanelState" uuid="73b1a0d2-0e83-4ade-86cf-19c477e9d4b3"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="a0c49bca-345d-4eae-8c70-95aa5b130932">
-      <context type="sltp.mm.core.Context" uuid="72993f32-3b0b-4a3e-bcac-9e26859db0b3"/>
+    <rootTask type="sltp.mm.core.Task" uuid="6ef64241-3a55-4c99-8455-8c50cea2098c">
+      <context type="sltp.mm.core.Context" uuid="2e8d0b33-207d-4117-a257-f7d55e46ac99"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="700ddd8a-f571-4426-8015-43f908b8769f">
-        <tasks type="sltp.mm.core.Task" uuid="466eaf3f-ea0c-4314-a1e3-a73b7b2abbfc">
+      <subgraph type="sltp.mm.core.Graph" uuid="4f9f2dc4-6d40-4874-89fc-b284fcba5fc1">
+        <tasks type="sltp.mm.core.Task" uuid="eaf977e7-4d8c-4971-8bf3-ba3fdd1b7755">
           <baseTask>true</baseTask>
-          <context type="sltp.mm.core.Context" uuid="72993f32-3b0b-4a3e-bcac-9e26859db0b3"/>
+          <context type="sltp.mm.core.Context" uuid="2e8d0b33-207d-4117-a257-f7d55e46ac99"/>
           <explicit>false</explicit>
           <id>1</id>
           <isTimed>true</isTimed>
           <name>Cont</name>
           <priority>40</priority>
-          <rates type="sltp.mm.core.Rate" uuid="45271ac5-3efa-42e9-a969-3800817bda83">
+          <rates type="sltp.mm.core.Rate" uuid="02e1ab30-4bbe-4f38-a220-2b820ccfa3bf">
             <annotation>Cont</annotation>
             <color>255</color>
             <hasBlocks>true</hasBlocks>
@@ -960,7 +960,7 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>0</sti>
           </rates>
-          <rates type="sltp.mm.core.Rate" uuid="880dd61c-b7cc-4c16-944e-f2f77c166d9a">
+          <rates type="sltp.mm.core.Rate" uuid="b689da5e-fe26-45fa-b570-06f948ff9e89">
             <annotation>FiM</annotation>
             <color>-2139062017</color>
             <hasBlocks>true</hasBlocks>
@@ -970,7 +970,7 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>1</sti>
           </rates>
-          <rates type="sltp.mm.core.Rate" uuid="964bc95e-acf9-48b4-8dc9-7cf4bfba7aa1">
+          <rates type="sltp.mm.core.Rate" uuid="d34293a7-d365-4fa4-a57e-10e1a28a82b2">
             <annotation>D1</annotation>
             <color>-436207361</color>
             <hasBlocks>true</hasBlocks>
@@ -1626,13 +1626,13 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <Block BlockType="Quantizer" Name="Quantizer" SID="151">
     <P Name="Position">[1125, 200, 1155, 230]</P>
     <P Name="ZOrder">43</P>
-    <P Name="QuantizationInterval">0.05</P>
+    <P Name="QuantizationInterval">1</P>
   </Block>
   <Block BlockType="Quantizer" Name="Quantizer1" SID="153">
     <P Name="Position">[1355, 295, 1385, 325]</P>
     <P Name="ZOrder">42</P>
     <P Name="BlockMirror">on</P>
-    <P Name="QuantizationInterval">0.05</P>
+    <P Name="QuantizationInterval">1</P>
   </Block>
   <Block BlockType="Step" Name="Reference" SID="71">
     <P Name="Position">[940, 185, 970, 215]</P>
@@ -1658,7 +1658,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Ports">[1]</P>
     <P Name="Position">[1235, 89, 1265, 121]</P>
     <P Name="ZOrder">39</P>
-    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true,&apos;DataLoggingVariableName&apos;,&apos;ScopeData1&apos;),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;-47.08528&apos;,&apos;MaxYLimReal&apos;,&apos;332.66546&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;332.66546&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,1,&apos;LineNames&apos;,{{&apos;Discretized controller&apos;}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;-47.08528&apos;,&apos;MaxYLimReal&apos;,&apos;332.66546&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;332.66546&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2022a&apos;)),&apos;Version&apos;,&apos;2022a&apos;)</P>
+    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true,&apos;DataLoggingVariableName&apos;,&apos;ScopeData1&apos;),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;-0.625&apos;,&apos;MaxYLimReal&apos;,&apos;5.625&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;5.625&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,1,&apos;LineNames&apos;,{{&apos;Saturation&apos;}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;-0.625&apos;,&apos;MaxYLimReal&apos;,&apos;5.625&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;5.625&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2022a&apos;)),&apos;Version&apos;,&apos;2022a&apos;)</P>
     <P Name="NumInputPorts">1</P>
     <P Name="Floating">off</P>
   </Block>
@@ -1904,7 +1904,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">078924cd-1b8c-4d7d-8930-d8df4c9d32f3</P>
     </Object>
-    <P Name="BDUuid" Class="char">b8c69a66-2c39-4371-8ce6-1f9e550f96ef</P>
+    <P Name="BDUuid" Class="char">930f7284-c454-4415-ae7d-9ec039c82051</P>
   </Object>
 </WindowsInfo>
 
