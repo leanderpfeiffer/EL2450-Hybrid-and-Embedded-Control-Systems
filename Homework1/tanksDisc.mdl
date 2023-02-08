@@ -41,8 +41,13 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <cp:category>model</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-28T17:26:51Z</dcterms:created>
+<<<<<<< HEAD
   <cp:lastModifiedBy>leanderpfeiffer</cp:lastModifiedBy>
   <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T21:35:18Z</dcterms:modified>
+=======
+  <cp:lastModifiedBy>pirmi</cp:lastModifiedBy>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-29T22:27:34Z</dcterms:modified>
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
   <cp:revision>11.5</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
@@ -119,7 +124,11 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
+<<<<<<< HEAD
       <P Name="RTWModifiedTimeStamp">596932515</P>
+=======
+      <P Name="RTWModifiedTimeStamp">596925819</P>
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
       <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.5&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
@@ -917,8 +926,13 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
+<<<<<<< HEAD
   <System type="System" uuid="a91b7e87-de9e-4b5b-b94c-cb96171f42c4">
     <Interface type="Interface" uuid="653533ea-7025-4ea5-b4ab-b1da23a6ea94"/>
+=======
+  <System type="System" uuid="c4d10009-bee7-4ca6-9155-80b511b2d1e8">
+    <Interface type="Interface" uuid="5f434d51-3c9f-4e93-aa9c-b73f66b07510"/>
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
@@ -930,12 +944,17 @@ __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
+<<<<<<< HEAD
   <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="8ce8bda7-67cd-4f3f-a398-086bda6dca3f">
+=======
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="a4555a71-afe2-40d9-b4a5-f7a93278f761">
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
     <priorityDirection>HighNumberLast</priorityDirection>
     <editorState type="sltp.mm.core.EditorState" uuid="64e6c17e-0e9d-445d-bed7-34581ff8ff07">
       <isSynchronized>true</isSynchronized>
       <panelState type="sltp.mm.core.EditorPanelState" uuid="73b1a0d2-0e83-4ade-86cf-19c477e9d4b3"/>
     </editorState>
+<<<<<<< HEAD
     <rootTask type="sltp.mm.core.Task" uuid="4c02f879-2156-46ee-a403-aef75dd4bf48">
       <context type="sltp.mm.core.Context" uuid="8ce8bda7-67cd-4f3f-a398-086bda6dca3f"/>
       <explicit>false</explicit>
@@ -945,12 +964,27 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
         <tasks type="sltp.mm.core.Task" uuid="702b1fc3-9bb8-481b-8f89-369b24355f66">
           <baseTask>true</baseTask>
           <context type="sltp.mm.core.Context" uuid="8ce8bda7-67cd-4f3f-a398-086bda6dca3f"/>
+=======
+    <rootTask type="sltp.mm.core.Task" uuid="e77fd258-6235-4b09-84c3-dfa91664392d">
+      <context type="sltp.mm.core.Context" uuid="a4555a71-afe2-40d9-b4a5-f7a93278f761"/>
+      <explicit>false</explicit>
+      <name>Default</name>
+      <priority>-2147483648</priority>
+      <subgraph type="sltp.mm.core.Graph" uuid="02086136-e506-482b-862f-3c2b078e89cc">
+        <tasks type="sltp.mm.core.Task" uuid="55bbe549-97a8-465e-b8e7-c03ad63e809e">
+          <baseTask>true</baseTask>
+          <context type="sltp.mm.core.Context" uuid="a4555a71-afe2-40d9-b4a5-f7a93278f761"/>
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
           <explicit>false</explicit>
           <id>1</id>
           <isTimed>true</isTimed>
           <name>Cont</name>
           <priority>40</priority>
+<<<<<<< HEAD
           <rates type="sltp.mm.core.Rate" uuid="a011c38c-9be3-40c1-8046-7673abf8c3a3">
+=======
+          <rates type="sltp.mm.core.Rate" uuid="d2c0ee68-4cee-4d30-b970-057606176862">
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
             <annotation>Cont</annotation>
             <color>255</color>
             <hasBlocks>true</hasBlocks>
@@ -960,7 +994,11 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>0</sti>
           </rates>
+<<<<<<< HEAD
           <rates type="sltp.mm.core.Rate" uuid="d608a421-a09f-4c26-852a-f18de4c21b3b">
+=======
+          <rates type="sltp.mm.core.Rate" uuid="e7776694-769f-47b1-a5a3-c63c46fe55cd">
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
             <annotation>FiM</annotation>
             <color>-2139062017</color>
             <hasBlocks>true</hasBlocks>
@@ -970,7 +1008,11 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>1</sti>
           </rates>
+<<<<<<< HEAD
           <rates type="sltp.mm.core.Rate" uuid="85ebc089-6550-411a-9dd6-6652cfe50e4a">
+=======
+          <rates type="sltp.mm.core.Rate" uuid="488f5235-5002-4536-b050-f072cdbec869">
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
             <annotation>D1</annotation>
             <color>-436207361</color>
             <hasBlocks>true</hasBlocks>
@@ -1850,6 +1892,18 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="DockPosition" Class="char">Right</P>
           <P Name="Width" Class="int32">640</P>
           <P Name="Height" Class="int32">480</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+        <Object ObjectID="9">
+          <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
+          <P Name="ID" Class="char">Property Inspector</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char"/>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Right</P>
+          <P Name="Width" Class="int32">426</P>
+          <P Name="Height" Class="int32">320</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
       </Array>

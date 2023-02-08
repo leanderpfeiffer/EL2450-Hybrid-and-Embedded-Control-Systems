@@ -111,9 +111,17 @@ hold off
 j=1;
 m=5;
 %performanceDiscQuant=zeros(m,3);
+<<<<<<< HEAD
 %discretequantSignal= zeros(55,m); %size needs to be changed when changing time
+=======
+<<<<<<< Updated upstream
+discretequantSignal= zeros(55,m); %change with time
+=======
+discretequantSignal= zeros(255,m); %size needs to be changed when changing time
+>>>>>>> Stashed changes
+>>>>>>> 757c3501f1d00e2d44a7007d99b5ddf10a13b799
 figure;
-for quantint = linspace(0.05,0.25,m)
+for quantint = linspace(0.05,100,m)
 set_param('tanksDiscQuant/Quantizer','QuantizationInterval',num2str(quantint))
 set_param('tanksDiscQuant/Quantizer1','QuantizationInterval',num2str(quantint))
 simOut=sim('tanksDiscQuant.mdl');
