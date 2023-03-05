@@ -21,7 +21,7 @@ switch(task_number){
         break;
     
     case 11:
-    	theta_goal = atan2(yg - y,xg - x) * (180/PI);
+    	theta_goal = atan2(yg - y0,xg - x0) * (180/PI);
     	w = 0;
     	d_0 = cos(theta_goal * PI/180) * abs(xg - x) + sin(theta_goal * PI/180) * abs(yg - y);
     	v =  K_omega * d_0;
@@ -31,7 +31,7 @@ switch(task_number){
     	theta_goal = atan2(yg - y0,xg - x0) * (180/PI);
     	v = 0;
     	dp = (x+p*cos(theta*PI/180)-x0)*sin(theta_goal*PI/180)-(y+p*sin(theta*PI/180)-y0)*cos(theta_goal*PI/180);
-    	w = K_Psi * dp;
+    	w = K_Psi * dp *180/PI;
     	break;
     	
     case 15:
@@ -44,7 +44,18 @@ switch(task_number){
     	break;
     	
     case 17:
-    	theta_ref = atan2(yg - y,xg - x) * (180/PI);
+    	if (xg != x0)
+    	{
+    		theta_ref = atan2(yg - y0,xg - x0) * (180/PI);
+    	}
+    	else if (yg>y0)
+    	{
+    		theta_ref = 90;
+    	}
+    	else if (yg<y0)
+    	{
+    		theta_ref = -90;
+    	}
     	error_rotation = theta_ref - theta;
     	d_0 = cos(theta_ref * PI / 180) * (xg - x) + sin(theta_ref * PI / 180) * (yg - y);
 
@@ -57,13 +68,16 @@ switch(task_number){
     	{
     	    state = 3;
     	}
-    	
+    	if (state ==3 && abs(d_0) > epsilon_d)
+    	{
+    		state = 1;
+    	}
     	Serial.print("Current state:");
     	Serial.print(state, DEC);
     	Serial.print("\nError rotation:");
     	Serial.print(error_rotation, 3);
     	Serial.print("\nError go to goal:");
-    	Serial.print(error_go_to_goal, 3);
+    	Serial.print(dp, 3);
     	
     	if(state == 1){
         	theta_goal = atan2(yg - y0,xg - x0) * (180/PI);
@@ -86,5 +100,5 @@ switch(task_number){
     	
 }
 
-left = v - w/2;
-right = v + w/2;
+left = int(v - w/2);
+right = int(v + w/2);
